@@ -194,7 +194,6 @@ class _PlaneIndicatorState extends State<PlaneIndicator>
           onRefresh: () => Future.delayed(const Duration(seconds: 3)),
           builder: (BuildContext context, Widget child,
               IndicatorController controller) {
-            RefreshScrollPhysics.forceToOverScroll = controller.value == 0;
             return AnimatedBuilder(
               animation: controller,
               child: child,

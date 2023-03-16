@@ -229,8 +229,10 @@ class CustomRefreshIndicatorState extends State<CustomRefreshIndicator>
   }
 
   /// Notifies the listeners of the controller
-  void _updateCustomRefreshIndicatorValue() =>
-      _customRefreshIndicatorController.setValue(_animationController.value);
+  void _updateCustomRefreshIndicatorValue() {
+    _customRefreshIndicatorController.setValue(_animationController.value);
+    RefreshScrollPhysics.forceToOverScroll = _animationController.value == 0;
+  }
 
   bool _handleScrollIndicatorNotification(
     OverscrollIndicatorNotification notification,

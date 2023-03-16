@@ -108,7 +108,6 @@ class _IceCreamIndicatorState extends State<IceCreamIndicator>
         Widget child,
         IndicatorController controller,
       ) {
-        RefreshScrollPhysics.forceToOverScroll = controller.value == 0;
         return Stack(
           children: <Widget>[
             AnimatedBuilder(
