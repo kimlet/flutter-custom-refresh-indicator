@@ -1,3 +1,4 @@
+import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 
 import 'example_app_bar.dart';
@@ -12,7 +13,7 @@ class ExampleList extends StatelessWidget {
     this.reverse = false,
     this.countElements = false,
     this.backgroundColor = appBackgroundColor,
-    this.itemCount = 4,
+    this.itemCount = 40,
   }) : super(key: key);
 
   @override
@@ -32,7 +33,7 @@ class ExampleList extends StatelessWidget {
       child: ListView.separated(
         reverse: reverse,
         physics: const AlwaysScrollableScrollPhysics(
-          parent: ClampingScrollPhysics(),
+          parent: RefreshScrollPhysics(),
         ),
         itemBuilder: (BuildContext context, int index) => countElements
             ? Element(
